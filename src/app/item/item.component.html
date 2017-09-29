@@ -1,0 +1,9 @@
+<a class="list-group-item">
+    <h4 class="list-group-item-heading">{{character.name}}</h4>
+    <p>{{character.subjects}}</p>
+    <div>
+      <button (click)="onAssignSide('available')" class="btn btn-primary">Available</button>
+      <button (click)="onAssignSide('busy')" class="btn btn-danger">Busy</button>
+    </div>
+    <p class="list-group-item-text">...</p>
+</a>

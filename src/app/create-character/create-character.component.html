@@ -1,0 +1,20 @@
+<form (ngSubmit)="submit(thisForm)" #thisForm="ngForm">
+  <div class="form-group">
+    <label for="name">New Name:</label>
+    <input type="text" id="name" name="name" placeholder="New Name" class="form-control" ngModel required pattern="[a-zA-Z ]*" #namevalue="ngModel">
+    <span *ngIf="namevalue.invalid && namevalue.touched">Please enter valid name.</span>
+  </div>
+  <div class="form-group">
+     <label for="side">Choose Side:</label>
+     <select class="form-control" id="side" name="side" ngModel>
+       <option [value]="side.value" *ngFor="let side of availableSides">{{side.display}}</option>
+     </select>
+  </div>
+  <div class="form-group">
+    <label for="subjects">Choose Side:</label>
+    <textarea id="subjects" name="subjects" placeholder="Subjects" class="form-control" ngModel required #subjectsvalue="ngModel"></textarea>
+    <span *ngIf="subjectsvalue.invalid && subjectsvalue.touched">Please enter valid subjects.</span>
+ </div>
+  <button class="btn btn-primary" type="submit">Add Tutor</button>
+</form>
+
